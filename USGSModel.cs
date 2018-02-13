@@ -26,9 +26,9 @@ namespace TestUsgs
             public string Lugar { get; set; }
             [JsonProperty(PropertyName = "time")]
             public long Hora { get; set; }
-            [JsonProperty(PropertyName = "updated")]
+            [JsonProperty(PropertyName = "updated", NullValueHandling =NullValueHandling.Ignore)]
             public long Actualizado { get; set; }
-            [JsonProperty(PropertyName = "tz")]
+            [JsonProperty(PropertyName = "tz", NullValueHandling =NullValueHandling.Ignore)]
             public int tz { get; set; }
             [JsonProperty(PropertyName = "url")]
             public string Url { get; set; }

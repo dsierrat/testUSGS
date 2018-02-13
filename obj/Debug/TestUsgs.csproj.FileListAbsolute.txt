@@ -7,3 +7,5 @@ c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.csprojRe
 c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.csproj.CoreCompileInputs.cache
 c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.exe
 c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.pdb
+C:\Users\Mateo Sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\MySql.Data.dll
+C:\Users\Mateo Sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\MySql.Data.xml

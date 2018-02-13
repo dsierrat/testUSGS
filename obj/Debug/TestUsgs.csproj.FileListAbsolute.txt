@@ -1,0 +1,9 @@
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\TestUsgs.exe.config
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\TestUsgs.exe
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\TestUsgs.pdb
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\Newtonsoft.Json.dll
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\bin\Debug\Newtonsoft.Json.xml
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.csprojResolveAssemblyReference.cache
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.csproj.CoreCompileInputs.cache
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.exe
+c:\users\mateo sierra\source\repos\TestUsgs\TestUsgs\obj\Debug\TestUsgs.pdb

@@ -50,30 +50,35 @@ namespace ServiceVerifier
             {
                 DateTime fechaEvento = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
                 fechaEvento = fechaEvento.AddMilliseconds(evento.Propiedades.Hora).ToUniversalTime();
-                InsertEvent(evento.Propiedades, fechaEvento);
+
+                if (!SearchExistence(evento.Propiedades.Code))
+                {
+                    InsertEvent(evento.Propiedades, fechaEvento);
+                }
+                else
+                {
+                    Console.WriteLine("The event " + evento.Propiedades.Titulo + " Already exists");
+                }
             }
         }
 
         public static void InsertEvent(USGSModel.Propiedades propiedades, DateTime fecha )
         {
             try {
-                if (!SearchExistence(propiedades.Code))
-                {
-                    Console.WriteLine(propiedades.Titulo + " at " + fecha);                    MySqlCommand comm = con.CreateCommand();
-                    comm.CommandText = "INSERT INTO evento(title,code,fecha,magnitud,importancia) VALUES(@title,@code,@fecha,@magnitud,@importancia)";
-                    comm.Parameters.AddWithValue("@title", propiedades.Titulo);
-                    comm.Parameters.AddWithValue("@code", propiedades.Code);
-                    comm.Parameters.AddWithValue("@fecha", fecha);
-                    comm.Parameters.AddWithValue("@magnitud", propiedades.Magnitud);
-                    comm.Parameters.AddWithValue("@importancia", propiedades.Importancia);
-                    comm.ExecuteNonQuery();
-                    Console.Beep(2000, 2000);
-                    MessageBox.Show("There's a new Earthqueake in " + propiedades.Lugar + " Magnitud: " + propiedades.Magnitud, "Program");
-                }
-                else
-                {
-                    Console.WriteLine("The event " + propiedades.Titulo +" Already exists");
-                }                
+                Console.WriteLine(propiedades.Titulo + " at " + fecha);                    MySqlCommand comm = con.CreateCommand();
+                comm.CommandText = "INSERT INTO evento(title,code,fecha,magnitud,importancia) VALUES(@title,@code,@fecha,@magnitud,@importancia)";
+                comm.Parameters.AddWithValue("@title", propiedades.Titulo);
+                comm.Parameters.AddWithValue("@code", propiedades.Code);
+                comm.Parameters.AddWithValue("@fecha", fecha);
+                comm.Parameters.AddWithValue("@magnitud", propiedades.Magnitud);
+                comm.Parameters.AddWithValue("@importancia", propiedades.Importancia);
+                comm.ExecuteNonQuery();
+                Console.Beep(2000, 2000);
+
+                Email email = new Email();
+                email.SendEmail(propiedades.Titulo);
+
+                MessageBox.Show("There's a new Earthqueake in " + propiedades.Lugar + " Magnitud: " + propiedades.Magnitud, "Program");
             }
             catch (Exception e)
             {
